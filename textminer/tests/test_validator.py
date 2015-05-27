@@ -4,7 +4,7 @@ xfail = pytest.mark.xfail
 import textminer.validator as v
 
 
-@xfail
+#@xfail
 def test_binary_numbers():
     assert v.binary("0")
     assert v.binary("1")
@@ -15,7 +15,7 @@ def test_binary_numbers():
     assert not v.binary("911")
 
 
-@xfail
+#@xfail
 def test_binary_even():
     """String must be a binary number and be even."""
 
@@ -24,7 +24,7 @@ def test_binary_even():
     assert not v.binary_even("1011")
 
 
-@xfail
+#@xfail
 def test_hexadecimal():
     assert v.hex("CAFE")
     assert v.hex("9F9")
@@ -34,7 +34,7 @@ def test_hexadecimal():
     assert not v.hex("COFFEE")
 
 
-@xfail
+#@xfail
 def test_word():
     assert v.word("hello")
     assert v.word("wonderful")
@@ -47,7 +47,7 @@ def test_word():
     assert not v.word("bar*us")
 
 
-@xfail
+#@xfail
 def test_words():
     """words can take an optional count argument. In case it exists, the text
     must match that number of words."""
@@ -69,7 +69,7 @@ def test_words():
     assert not v.words("18-wheeler tarbox", count=3)
 
 
-@xfail
+#@xfail
 def test_phone_numbers():
     """US phone numbers only."""
 
@@ -84,7 +84,7 @@ def test_phone_numbers():
     assert not v.phone_number("mobile")
 
 
-@xfail
+#@xfail
 def test_money():
     """We are just concerned with dollars here."""
 
@@ -110,7 +110,7 @@ def test_money():
     assert not v.money("$$31")
 
 
-@xfail
+#@xfail
 def test_zip():
     assert v.zipcode("63936")
     assert v.zipcode("50583")
@@ -125,7 +125,7 @@ def test_zip():
     assert not v.zipcode("8029-3924")
 
 
-@xfail
+#@xfail
 def test_date():
     assert v.date("9/4/1976")
     assert v.date("1976-09-04")

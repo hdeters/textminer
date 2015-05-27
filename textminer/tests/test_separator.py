@@ -4,7 +4,7 @@ params = pytest.mark.parametrize
 
 import textminer.separator as s
 
-@xfail
+#@xfail
 @params("input,expected", [
     ("hello", ['hello']),
     ("hello world", ['hello', 'world']),
@@ -16,7 +16,7 @@ def test_words(input, expected):
     assert s.words(input) == expected
 
 
-@xfail
+#@xfail
 @params("input,expected", [
     ("919-555-1212", {"area_code": "919", "number": "555-1212"}),
     ("(919) 555-1212", {"area_code": "919", "number": "555-1212"}),
@@ -29,7 +29,7 @@ def test_phone_numbers(input, expected):
     assert s.phone_number(input) == expected
 
 
-@xfail
+#@xfail
 @params("input,expected", [
     ("$4", {"currency": "$", "amount": 4.0}),
     ("$19", {"currency": "$", "amount": 19.0}),
@@ -57,7 +57,7 @@ def test_money(input, expected):
     assert s.money(input) == expected
 
 
-@xfail
+#@xfail
 @params("input,expected", [
     ("63936", {"zip": "63936", "plus4": None}),
     ("50583", {"zip": "50583", "plus4": None}),
@@ -73,7 +73,7 @@ def test_zip(input, expected):
     assert s.zipcode(input) == expected
 
 
-@xfail
+#@xfail
 @params("input,expected", [
     ("9/4/1976", {"month": 9, "day": 4, "year": 1976}),
     ("1976-09-04", {"month": 9, "day": 4, "year": 1976}),
@@ -97,7 +97,7 @@ def test_date(input, expected):
     ("9/4", None),
     ("2015", None),
 ])
-def test_date(input, expected):
+def test_date2(input, expected):
     assert s.date(input) == expected
 
 
